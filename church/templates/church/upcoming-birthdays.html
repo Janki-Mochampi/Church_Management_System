@@ -1,0 +1,16 @@
+{% extends 'main.html' %}
+
+{% block content %}
+<h2>Upcoming Birthdays</h2>
+
+{% if upcoming_birthdays %}
+    <ul>
+        {% for user in upcoming_birthdays %}
+            <li>{{ user.first_name }} {{ user.last_name }} - {{ user.birth_date|date:"F j" }}</li>
+        {% endfor %}
+    </ul>
+{% else %}
+    <p>No upcoming birthdays.</p>
+{% endif %}
+
+{% endblock %}

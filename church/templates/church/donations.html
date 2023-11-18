@@ -1,0 +1,9 @@
+{% extends 'main.html' %}
+{% block content %}
+    <h2>Donation History</h2>
+    <ul>
+        {% for Donation in donations %}
+            <li>{{ Donation.amount }} donated for {{ Donation.type }}</li>
+        {% endfor %}
+    </ul>
+{% endblock %}

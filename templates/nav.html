@@ -1,0 +1,25 @@
+{% load static %}
+<div class="wrapper">
+    <nav class="navbar">
+        <img class="logo" src="{% static 'logo.png' %}">
+        <ul>
+            <li><a class="active" href="{% url 'home' %}">Home</a></li>
+            {% if request.user.is_authenticated %}
+            <li><a href="{% url 'upcoming_events' %}">Events</a></li>
+            <li><a href="{% url 'donation-history' %}">Donations</a></li>
+            <li><a href="{% url 'view_messages' %}">Messages</a></li>
+            <li><a href="{% url 'update_profile'  pk=user.id  %}">Profile</a></li>
+            <li><a href="{% url 'create-donation' %}">Donate</a></li>
+            <li><a href="{% url 'upcoming_birthdays' %}">Birthdays</a></li>
+            <li><a href="{% url 'logout' %}">Logout</a></li>
+            {% else %}
+            <li><a href="{% url 'login' %}">Login/Sign Up</a></li>
+            {% endif %}
+            
+        </ul>
+    </nav>
+    
+</div>
+
+
+
